@@ -1,3 +1,101 @@
+attr (1:2.4.46-8) unstable; urgency=low
+
+  * Enable hardening build flags 
+    Closes: #674003
+  * DH compatibility level is 9
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Wed, 13 Jun 2012 17:52:45 +1000
+
+attr (1:2.4.46-7) unstable; urgency=low
+
+  * Build-depend on gettext. If it build-depends on gettext:any,
+    the auto-builders stop with the message below.
+    Dependency installability problem for attr on armel, armhf, hurd-i386,
+    kfreebsd-amd64, kfreebsd-i386, mips, powerpc, s390, s390x and sparc:
+    attr (= 1:2.4.46-6) build-depends on missing:
+    - not-existing-build-dependency-for-any
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Thu, 10 May 2012 17:35:17 +1000
+
+attr (1:2.4.46-6) unstable; urgency=low
+
+  * Merge 1:2.4.46-5ubuntu1
+    - Build-depend on gettext:any, since we only need it to run tools at
+      build-time.
+  * Use /bin/sh as CONFIG_SHELL in debian/rules
+    Closes: #671903
+  * Fix out-of-date-standards-version
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Thu, 10 May 2012 13:21:50 +1000
+
+attr (1:2.4.46-5ubuntu1) precise; urgency=low
+
+  * Merge from Debian testing, remaining changes:
+    - Build-depend on gettext:any, since we only need it to run tools at
+      build-time.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sat, 17 Dec 2011 19:49:26 -0800
+
+attr (1:2.4.46-5) unstable; urgency=low
+
+  * Add Debian epoch version to shlibs dependency.
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Sat, 03 Dec 2011 22:04:54 +1100
+
+attr (1:2.4.46-4) unstable; urgency=low
+
+  * Mark libattr1-dev Multi-Arch: same
+    Patch by Steve Langasek
+    Closes: 647855
+  * Build if autconf2.13 is installed
+    Add 12-643587-attr-autoconf-version-check.patch
+    Patch by Wookey
+    Closes: 643587
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Sat, 03 Dec 2011 21:25:23 +1100
+
+attr (1:2.4.46-3ubuntu1) precise; urgency=low
+
+  * Build-depend on gettext:any, since we only need it to run tools at
+    build-time.
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sat, 05 Nov 2011 17:34:57 +0000
+
+attr (1:2.4.46-3) unstable; urgency=medium
+
+  * libattr1: Don't pass "-Zbzip2 -z9" to dpkg-deb
+    Closes: 634090
+  * Don't ship .la files
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Sun, 17 Jul 2011 12:19:48 +1000
+
+attr (1:2.4.46-2) unstable; urgency=low
+
+  * Append 'libattr 1 libattr1 (>= 2.4.46-2)' to
+    debian/libattr1/DEBIAN/shlibs
+  * Remove debian/{attr,libattr1,libattr1-dev}.debhelper.log
+  * Set standards-version to 3.9.2
+  * Pass "-Zbzip2 -z9" to dpkg-deb
+  * Fix debian-rules-missing-recommended-target
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Mon, 04 Jul 2011 21:29:12 +1000
+
+attr (1:2.4.46-1) unstable; urgency=low
+
+  * New upstream release (Closes: #626622).
+  - All patches are incorporated upstream.
+  * Add multiarch support (Closes: #528141).
+
+ -- Luk Claes <luk@debian.org>  Fri, 24 Jun 2011 07:37:19 +0200
+
+attr (1:2.4.44-3) unstable; urgency=medium
+
+  * Add myself as comaintainer
+  * Use bash in build process (Closes: #621927)
+  * Pass host & build to allow cross builds to succeed (Closes: #284044) 
+
+ -- Luk Claes <luk@debian.org>  Sat, 28 May 2011 15:48:08 +0200
+
 attr (1:2.4.44-2) unstable; urgency=low
 
   * Source format is 3.0 (quilt)
@@ -351,6 +449,3 @@ attr (1.0.2) unstable; urgency=low
 
  -- Nathan Scott <nathans@debian.org>  Wed, 25 Apr 2001 12:19:15 +1000
 
-Local variables:
-mode: debian-changelog
-End:
