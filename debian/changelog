@@ -1,3 +1,19 @@
+attr (1:2.4.47-1) unstable; urgency=low
+
+  * New upstream release 2.4.47
+    Fix "getfattr should indicate missing xattrs via exit value"
+    Closes: #520659
+  * Update debian/rules
+    Upstream renamed build/ to package/
+  * Upstream renamed configure.in to configure.ac and didn't ship it.
+    Add 01-configure.in.patch
+  * Fix missing ldflags
+    Add 02-687531-fix-missing-ldflags.patch
+    Patch by Simon Ruderich
+    Closes: #687531
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Mon, 20 May 2013 19:07:56 +1000
+
 attr (1:2.4.46-8) unstable; urgency=low
 
   * Enable hardening build flags 
